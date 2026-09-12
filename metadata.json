@@ -1,0 +1,6 @@
+{
+  "name": "Mirest",
+  "description": "Plateforme de découverte d'idées avec colonnes d'images et vidéos enrichies d'actions interactives à effet néon captivant, soigné et simple.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

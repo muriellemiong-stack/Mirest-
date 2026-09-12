@@ -1,0 +1,359 @@
+@import "tailwindcss";
+
+:root {
+  --neon-cyan: #00d2ff;
+  --neon-cyan-glow: rgba(0, 210, 255, 0.45);
+  --neon-cyan-subtle: rgba(0, 210, 255, 0.18);
+  
+  --neon-black: #000000;
+  --neon-black-glow: rgba(0, 0, 0, 0.75);
+  --neon-black-soft: rgba(0, 0, 0, 0.35);
+
+  --neon-pink: #ff2a85;
+  --neon-pink-glow: rgba(255, 42, 133, 0.45);
+  --neon-pink-subtle: rgba(255, 42, 133, 0.18);
+
+  --neon-purple: #9d4edd;
+  --neon-purple-glow: rgba(157, 78, 221, 0.45);
+
+  --neon-emerald: #00f5a0;
+  --neon-emerald-glow: rgba(0, 245, 160, 0.45);
+
+  --neon-amber: #ffb703;
+  --neon-amber-glow: rgba(255, 183, 3, 0.45);
+
+  --sky: #35b7f3;
+  --sky-dark: #1c93d4;
+  --sky-light: #eaf7ff;
+  --ink: #16202a;
+  --ink-soft: #5b6b78;
+  --paper: #fbfcfd;
+  --line: #e6ebef;
+  --card-bg: #f1f4f6;
+  --navy: #0d1b2a;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--paper);
+  color: var(--ink);
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, .font-display {
+  font-family: 'Sora', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* ==============================================
+   SOIGNÉ & CAPTIVANT NEON ACTION EFFECTS
+   ============================================== */
+
+/* Primary Neon Action (Save / Enregistrer) */
+.neon-action-cyan {
+  position: relative;
+  background: linear-gradient(135deg, #35b7f3 0%, #00b4d8 100%);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 
+    0 0 1px rgba(255, 255, 255, 0.8),
+    0 2px 8px rgba(0, 180, 216, 0.35),
+    0 0 14px rgba(0, 210, 255, 0.3);
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neon-action-cyan:hover {
+  background: linear-gradient(135deg, #00d2ff 0%, #0096c7 100%);
+  border-color: #ffffff;
+  box-shadow: 
+    0 0 2px #ffffff,
+    0 0 10px rgba(0, 210, 255, 0.85),
+    0 0 22px rgba(0, 210, 255, 0.55),
+    0 4px 16px rgba(0, 150, 199, 0.4);
+  transform: translateY(-1px) scale(1.03);
+}
+
+.neon-action-cyan:active {
+  transform: translateY(0) scale(0.97);
+  box-shadow: 0 0 12px rgba(0, 210, 255, 0.6);
+}
+
+/* Saved State Neon (Navy Indigo Glowing) */
+.neon-action-cyan.saved {
+  background: linear-gradient(135deg, #0d1b2a 0%, #1e293b 100%);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.7);
+  box-shadow: 
+    0 0 8px rgba(56, 189, 248, 0.5),
+    inset 0 0 6px rgba(56, 189, 248, 0.25);
+}
+
+/* Pink / Heart Favorite Neon Action */
+.neon-action-pink {
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  color: #475569;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neon-action-pink:hover, .neon-action-pink.liked {
+  background: rgba(255, 241, 246, 0.96);
+  color: #ff2a85;
+  border-color: rgba(255, 42, 133, 0.7);
+  box-shadow: 
+    0 0 2px #ffffff,
+    0 0 10px rgba(255, 42, 133, 0.75),
+    0 0 20px rgba(255, 42, 133, 0.45);
+  transform: scale(1.06);
+}
+
+.neon-action-pink:active {
+  transform: scale(0.94);
+}
+
+/* Circular Neon Glass Button (More "⋯" / Share / Quick View) */
+.neon-action-glass {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(10px);
+  color: #16202a;
+  border: 1px solid rgba(255, 255, 255, 0.65);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.neon-action-glass:hover {
+  background: #ffffff;
+  color: #0284c7;
+  border-color: #38bdf8;
+  box-shadow: 
+    0 0 1px #ffffff,
+    0 0 10px rgba(56, 189, 248, 0.65),
+    0 0 18px rgba(56, 189, 248, 0.35);
+  transform: translateY(-1px) scale(1.05);
+}
+
+/* Video Play Neon Action */
+.neon-action-play {
+  background: rgba(13, 27, 42, 0.75);
+  backdrop-filter: blur(8px);
+  color: #ffffff;
+  border: 1px solid rgba(0, 245, 160, 0.5);
+  box-shadow: 
+    0 0 10px rgba(0, 245, 160, 0.45),
+    0 0 20px rgba(0, 245, 160, 0.2);
+  transition: all 0.24s ease;
+}
+
+.neon-action-play:hover {
+  background: #00f5a0;
+  color: #062e20;
+  border-color: #ffffff;
+  box-shadow: 
+    0 0 2px #ffffff,
+    0 0 14px rgba(0, 245, 160, 0.9),
+    0 0 28px rgba(0, 245, 160, 0.55);
+  transform: scale(1.08);
+}
+
+/* Neon Badge for tags / labels */
+.neon-badge-pill {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(8px);
+  color: #0f172a;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease;
+}
+
+.card:hover .neon-badge-pill {
+  border-color: rgba(56, 189, 248, 0.65);
+  box-shadow: 
+    0 0 6px rgba(56, 189, 248, 0.4),
+    0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+/* Video Time Duration Neon Pill */
+.neon-badge-video {
+  background: rgba(13, 27, 42, 0.82);
+  backdrop-filter: blur(6px);
+  color: #38bdf8;
+  border: 1px solid rgba(56, 189, 248, 0.5);
+  box-shadow: 0 0 8px rgba(56, 189, 248, 0.35);
+  font-family: ui-monospace, SFMono-Regular, monospace;
+}
+
+/* Subtle Card Hover Neon Aura */
+.card-neon-wrapper {
+  transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card-neon-wrapper:hover {
+  box-shadow: 
+    0 10px 30px -10px rgba(13, 27, 42, 0.18),
+    0 0 16px -2px rgba(53, 183, 243, 0.28);
+}
+
+/* Custom Neon Pulse for highlighted items */
+@keyframes neonPulseCyan {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(0, 210, 255, 0.4), 0 0 16px rgba(0, 210, 255, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 14px rgba(0, 210, 255, 0.75), 0 0 24px rgba(0, 210, 255, 0.4);
+  }
+}
+
+.neon-pulse-cyan {
+  animation: neonPulseCyan 2.8s infinite ease-in-out;
+}
+
+/* Masonry layout column breaks */
+.masonry-col-item {
+  break-inside: avoid;
+  margin-bottom: 18px;
+}
+
+/* ==========================================================
+   PINTEREST-STYLE 2-COLUMN FORMAT WITH INTENSE BLACK NEON LIGHT
+   ========================================================== */
+
+.pinterest-column-wrapper {
+  position: relative;
+  border-radius: 28px;
+  padding: 12px 10px;
+  border: 2px solid transparent;
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  background-color: transparent;
+}
+
+/* Hover effect on column: sleek obsidian pre-glow */
+.pinterest-column-wrapper:hover {
+  border-color: rgba(0, 0, 0, 0.5);
+  box-shadow: 
+    0 0 2px #000000,
+    0 0 12px rgba(0, 0, 0, 0.35),
+    0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Selected Column: Intense, Highly Evident Black Neon Light */
+.pinterest-column-wrapper.neon-black-selected {
+  border-color: #000000 !important;
+  background-color: rgba(0, 0, 0, 0.02);
+  box-shadow: 
+    0 0 2px #000000,
+    0 0 10px rgba(0, 0, 0, 0.95),
+    0 0 24px rgba(0, 0, 0, 0.75),
+    0 0 52px rgba(0, 0, 0, 0.42),
+    0 0 85px rgba(0, 0, 0, 0.22),
+    inset 0 0 20px rgba(0, 0, 0, 0.08) !important;
+  animation: neonBlackTubePulse 2.8s infinite ease-in-out;
+  transform: translateY(-2px);
+}
+
+/* Dim unselected column when another is active to make the neon light pop out */
+.pinterest-column-dimmed {
+  opacity: 0.65;
+  filter: contrast(0.95);
+  transition: opacity 0.35s ease, filter 0.35s ease;
+}
+
+.pinterest-column-dimmed:hover {
+  opacity: 0.88;
+  filter: contrast(1);
+}
+
+@keyframes neonBlackTubePulse {
+  0%, 100% {
+    box-shadow: 
+      0 0 2px #000000,
+      0 0 9px rgba(0, 0, 0, 0.9),
+      0 0 22px rgba(0, 0, 0, 0.7),
+      0 0 48px rgba(0, 0, 0, 0.38),
+      0 0 80px rgba(0, 0, 0, 0.18),
+      inset 0 0 16px rgba(0, 0, 0, 0.06);
+  }
+  50% {
+    box-shadow: 
+      0 0 3px #000000,
+      0 0 16px rgba(0, 0, 0, 1),
+      0 0 34px rgba(0, 0, 0, 0.85),
+      0 0 68px rgba(0, 0, 0, 0.55),
+      0 0 110px rgba(0, 0, 0, 0.3),
+      inset 0 0 26px rgba(0, 0, 0, 0.12);
+  }
+}
+
+/* Prominent Neon Light Noir Header Badge */
+.neon-black-badge {
+  background: #000000;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 
+    0 0 2px #000000,
+    0 0 10px rgba(0, 0, 0, 0.95),
+    0 0 24px rgba(0, 0, 0, 0.65);
+}
+
+/* ==========================================================
+   INDIVIDUAL CELL BLACK NEON LIGHT (TOUT AUTOUR DE LA CELLULE)
+   ========================================================== */
+
+.cell-neon-black-selected {
+  position: relative;
+  z-index: 20;
+  border: 2.5px solid #000000 !important;
+  border-radius: 20px !important;
+  box-shadow: 
+    0 0 2px #000000,
+    0 0 10px rgba(0, 0, 0, 0.95),
+    0 0 22px rgba(0, 0, 0, 0.85),
+    0 0 45px rgba(0, 0, 0, 0.6),
+    0 0 78px rgba(0, 0, 0, 0.35),
+    0 16px 36px -4px rgba(0, 0, 0, 0.45) !important;
+  animation: cellBlackNeonBreathing 2.4s infinite ease-in-out;
+  transform: translateY(-4px) scale(1.015);
+}
+
+@keyframes cellBlackNeonBreathing {
+  0%, 100% {
+    box-shadow: 
+      0 0 2px #000000,
+      0 0 9px rgba(0, 0, 0, 0.95),
+      0 0 20px rgba(0, 0, 0, 0.8),
+      0 0 42px rgba(0, 0, 0, 0.55),
+      0 0 72px rgba(0, 0, 0, 0.3),
+      0 14px 32px -4px rgba(0, 0, 0, 0.4);
+  }
+  50% {
+    box-shadow: 
+      0 0 3px #000000,
+      0 0 15px rgba(0, 0, 0, 1),
+      0 0 30px rgba(0, 0, 0, 0.9),
+      0 0 60px rgba(0, 0, 0, 0.7),
+      0 0 98px rgba(0, 0, 0, 0.45),
+      0 18px 40px -4px rgba(0, 0, 0, 0.55);
+  }
+}
+
+/* Subtle cell hover outline */
+.cell-neon-hover:hover:not(.cell-neon-black-selected) {
+  border-color: rgba(0, 0, 0, 0.4);
+  box-shadow: 
+    0 0 2px rgba(0, 0, 0, 0.6),
+    0 0 10px rgba(0, 0, 0, 0.25),
+    0 6px 18px -2px rgba(0, 0, 0, 0.12);
+}
+
+/* When a card is actively glowing with neon light noir, softly dim the others for contrast */
+.cell-dimmed-background {
+  opacity: 0.68;
+  filter: contrast(0.96);
+  transition: opacity 0.3s ease, filter 0.3s ease;
+}
+
+.cell-dimmed-background:hover {
+  opacity: 0.9;
+  filter: contrast(1);
+}
+
